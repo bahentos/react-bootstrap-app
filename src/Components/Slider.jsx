@@ -16,8 +16,9 @@ const Slider = () => {
     return (
         <>
             <Carousel>
-                <Carousel.Item style={{'height': '400px'}}>
+                <Carousel.Item style={{position: 'relative',height: '400px'}}>
                     <img
+                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"
@@ -27,8 +28,9 @@ const Slider = () => {
                         <p>Do do nostrud est aliqua</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{'height': '400px'}}>
+                <Carousel.Item style={{position: 'relative',height: '400px'}}>
                     <img
+                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"
@@ -38,8 +40,9 @@ const Slider = () => {
                         <p>Do do nostrud est aliqua</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{'height': '400px'}}>
+                <Carousel.Item style={{position: 'relative',height: '400px'}}>
                     <img
+                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"

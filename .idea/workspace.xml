@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2e888af-5230-4cdc-acf1-870323f091b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Common/Desert.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Slider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navibar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navibar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
       <updated>1599032920230</updated>
       <workItem from="1599032921882" duration="7231000" />
       <workItem from="1599058453186" duration="497000" />
-      <workItem from="1599139649919" duration="3519000" />
+      <workItem from="1599139649919" duration="4376000" />
     </task>
     <servers />
   </component>
