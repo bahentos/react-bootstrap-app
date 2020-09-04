@@ -2,10 +2,12 @@ import React from "react";
 import {Carousel} from "react-bootstrap";
 import desert from '../Common/Desert.jpg'
 import styled from 'styled-components'
+import './Slider.css'
 
 const Styles = styled.div`
-  .carousel-item {
-    height: 400px
+ .carousel-item {
+    position: relative;
+    height: 400px;
   }
 `
 
@@ -16,7 +18,7 @@ const Slider = () => {
     return (
         <>
             <Carousel>
-                <Carousel.Item style={{position: 'relative',height: '400px'}}>
+                <Carousel.Item >
                     <img
                         style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"

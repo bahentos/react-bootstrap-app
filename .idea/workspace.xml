@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2e888af-5230-4cdc-acf1-870323f091b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Slider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navibar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navibar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,8 @@
       <updated>1599032920230</updated>
       <workItem from="1599032921882" duration="7231000" />
       <workItem from="1599058453186" duration="497000" />
-      <workItem from="1599139649919" duration="4376000" />
+      <workItem from="1599139649919" duration="4437000" />
+      <workItem from="1599204384810" duration="2038000" />
     </task>
     <servers />
   </component>
