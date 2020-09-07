@@ -13,7 +13,16 @@ const Styles = styled.div`
 `
 
 
+
+
 const Navibar = () => {
+
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false)
+const handleShow = () => setShow(true)
+
+
     return (
         <>
             <Styles>
@@ -29,7 +38,7 @@ const Navibar = () => {
                         </Nav>
                         <Nav>
                             <Button className="mr-2" variant={"primary"} onClick={handleShow}>Log In</Button>
-                            <Button variant={"primary"}>Sign Out</Button>
+                            <Button variant={"primary"} onClick={handleShow}>Sign Out</Button>
                         </Nav>
                     </Navbar.Collapse>
                     </Container>
@@ -49,10 +58,10 @@ const Navibar = () => {
                         <Form.Group controlId={"formBasicPassword"}>
                             <Form.Label>Password</Form.Label>
                             <Form.Control type={"password"} placeholder={"Enter password"}/>
-                        </Form.Group>\
+                        </Form.Group>
                         <Form.Group controlId={"formBasicCheckbox"}>
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type={"checkbox"} label={"Remember Me"}/>
+                            <Form.Check type={"checkbox"} label={"Remember Me"}/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>

@@ -20,7 +20,6 @@ const Slider = () => {
             <Carousel>
                 <Carousel.Item >
                     <img
-                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"
@@ -30,9 +29,8 @@ const Slider = () => {
                         <p>Do do nostrud est aliqua</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{position: 'relative',height: '400px'}}>
+                <Carousel.Item>
                     <img
-                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"
@@ -42,9 +40,8 @@ const Slider = () => {
                         <p>Do do nostrud est aliqua</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{position: 'relative',height: '400px'}}>
+                <Carousel.Item >
                     <img
-                        style={{position: "absolute", top: "-200px"}}
                         className="d-block w-100"
                         src={desert}
                         alt="First Slide"
