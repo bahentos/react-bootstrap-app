@@ -34,6 +34,7 @@ const handleShow = () => setShow(true)
                         <Nav className="mr-auto">
                             <Nav.Link><Link to="/">Home</Link></Nav.Link>
                             <Nav.Link><Link to="/users">Users</Link></Nav.Link>
+                            <Nav.Link><Link to="/grid">Grid</Link></Nav.Link>
                             <Nav.Link><Link to="/about">About</Link></Nav.Link>
                         </Nav>
                         <Nav>

@@ -1,6 +1,4 @@
 import React from "react";
-import desert from './Common/Desert.jpg'
-import styled from 'styled-components'
 import {Table} from 'react-bootstrap'
 
 
