@@ -14,8 +14,6 @@ const StyleCard = styled.div`
   height: 100px;
   overflow: hidden;
 }
-
-
 `
 
 
@@ -70,7 +68,7 @@ const Home = () => {
             <Container style={{marginBottom: '30px'}}>
                 <Row>
                     <Col md={7}>
-                        <img src={sea} height={400} />
+                            <img src={sea} className={"img-fluid"}/>
                     </Col>
                     <Col md={5}>
                         <h2>Заголовок этого бессмысленного текста</h2>

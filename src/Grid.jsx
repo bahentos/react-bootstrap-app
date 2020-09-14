@@ -6,10 +6,14 @@ const Design = styled.div`
 .col {
 background-color: darkgrey;
 border: 1px solid red;
-
-
 text-align: center;
 }
+.row {
+height: 100px;
+background-color: bisque;
+border: 2px solid darkblue;
+}
+
 `
 
 const Grid = () => {
@@ -17,22 +21,22 @@ const Grid = () => {
         <>
           <Design>
             <Container className="mt-2 mb-2">
-                <Row>
-                    <Col className={`col-3`}>
+                <Row className={''}>
+                    <Col className={`col-sm-3 align-self-start`}>
                         1
                     </Col>
-                    <Col className={`col-6`}>
+                    <Col className={`col-sm-6 align-self-center`}>
                         2
                     </Col>
-                    <Col className={`col-3`}>
+                    <Col className={`col-sm-3 align-self-end`}>
                         3
                     </Col>
                 </Row>
-              <Row>
-                <Col className={`col-9`}>
+              <Row className={'align-items-end'}>
+                <Col className={`col-sm-9`}>
                   4
                 </Col>
-                <Col >
+                <Col className={`col-sm-3`}>
                   5
                 </Col>
               </Row>
