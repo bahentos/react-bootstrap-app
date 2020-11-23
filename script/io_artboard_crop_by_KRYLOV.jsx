@@ -26,8 +26,6 @@ var unlock = false;
 
 var doc = app.activeDocument;
 
-var fileName = String(doc.fullName)
-
 // unlock all layers
 for (var i = 0; i < doc.layers.length; i++) {
     doc.layers[i].locked = false;
@@ -79,11 +77,7 @@ else
 
 	//Find all BLACK and overprint it
 //OverprintBlack();
-//cyrillicSpotCatch();
-
-// Если файл 278 заказчика, напомнить проверить параметры дисторсии
-if (fileName.match('/278/') != null)
-    alert('Проверьте дисторцию в параметрах Esko!')
+// cyrillicSpotCatch();
 
 app.executeMenuCommand("fitall")
 app.executeMenuCommand("zoomout")

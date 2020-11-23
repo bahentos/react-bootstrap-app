@@ -16,10 +16,8 @@ if (myNumber != null) {
 	//создание цвета "REGISTRATION"
 	function getRegColor()
 	{
-		for (var i = 0; i < doc.spots.length; i++)
-			{
-				if (doc.spots[i].colorType == ColorModel.REGISTRATION);
-				{
+		for (var i = 0; i < doc.spots.length; i++) {
+				if (doc.spots[i].colorType == ColorModel.REGISTRATION) {
 					regColor = new SpotColor();
 					regColor.spot = doc.spots[i];
 				}

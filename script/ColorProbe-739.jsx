@@ -85,16 +85,35 @@ with (app.activeDocument) {
         newProbeProfile = myDialog.panel1.group2.ProbeProfileData.text
         newProbeLPI = myDialog.panel1.group3.ProbeLPIData.text
         newProbeSurname = myDialog.panel1.group4.ProbeSurnameData.text
-        
+
         //Создаем массив пантонов
-         inksArray = []
+    inksArray = []
         for (i=0; i < inkList.length; i++) {
             if (inkList[i].inkInfo.printingStatus == InkPrintStatus.ENABLEINK) {
-                     inksArray.push (inkList[i]) 
+                if(inkList[i].name != "White" && inkList[i].name != "kroy") {
+                        inksArray.push (inkList[i]) 
+                    }                 
                }
                 
             }
-        
+       
+       
+       //Создаем массив свотчей соответствующий массиву пантонов
+       inksSwatches = []
+       for (i=0; i < inksArray.length; i++) {
+           if(inksArray[i].name === "Process Cyan" || inksArray[i].name === "Process Magenta" || inksArray[i].name === "Process Yellow" || inksArray[i].name === "Process Black") {
+                    inksSwatches.push({name: inksArray[i].name})
+               } else {
+                            for(j=0; j < swatches.length; j++){
+                                if(inksArray[i].name === swatches[j].name) {
+                                    inksSwatches.push(swatches[j])
+                             }
+                 }
+                   
+                    }
+
+       }
+
         //Вычисляем высоту таблицы
         function checkHeightTable (arr) {
            currentH = arr.length * 6
@@ -104,13 +123,13 @@ with (app.activeDocument) {
                         return  (currentH + 2 )
                    }
         }
-        
-        $.writeln(inksArray)
+
+      //  $.writeln(inksArray)
         tableHeight = checkHeightTable(inksArray)
-        
+
         //Вычисляем координаты для таблицы
         //inksArray = inkList.filter(function (item) {return item.inkInfo.printingStatus == InkPrintStatus.ENABLEINK} )
-        
+
         coordX = artboards[0].artboardRect[0]
         coordY = artboards[0].artboardRect[3] - 5
 
@@ -368,9 +387,9 @@ with (app.activeDocument) {
         fontStyle17.fillColor = blueColor
         text17 = text17.createOutline()
         text17.position = [coordX + 1.5 * mm, coordY - 42.434 * mm]
-        
-        
-        
+
+
+
         line13 = pathItems.add();
         line13.strokeWidth = 0.572
         line13.strokeColor = blueColor
@@ -410,7 +429,7 @@ with (app.activeDocument) {
         fontStyle19.fillColor = blueColor
         text19 = text19.createOutline()
         text19.position = [coordX + 44.38 * mm, coordY - 33 * mm]
-        
+
         text20 = textFrames.add()
         text20.contents = "дата"
         fontStyle20 = text20.textRange.characterAttributes
@@ -426,7 +445,7 @@ with (app.activeDocument) {
         fontStyle21.fillColor = blueColor
         text21 = text21.createOutline()
         text21.position = [coordX + 44.38 * mm, coordY - 40.522 * mm]
-        
+
         // третья колонка дат и подписей
 
         line16 = pathItems.add();
@@ -460,7 +479,7 @@ with (app.activeDocument) {
         fontStyle22.fillColor = blueColor
         text22 = text22.createOutline()
         text22.position = [coordX + 60 * mm, coordY - 30.3 * mm]
-        
+
         text23 = textFrames.add()
         text23.contents = "№"
         fontStyle23 = text23 .textRange.characterAttributes
@@ -468,7 +487,7 @@ with (app.activeDocument) {
         fontStyle23.fillColor = blueColor
         text23 = text23 .createOutline()
         text23.position = [coordX + 60.439 * mm, coordY - 42.508 * mm]
-        
+
         //Блок Утверждаю
 
         line19  = pathItems.add();
@@ -534,7 +553,7 @@ with (app.activeDocument) {
         fontStyle28.fillColor = blueColor
         text28 = text28.createOutline()
         text28.position = [coordX + 92.115 * mm, coordY - 28.925 * mm]
-        
+
         text29 = textFrames.add()
         text29.contents = "М.П."
         fontStyle29 = text29 .textRange.characterAttributes
@@ -582,16 +601,15 @@ with (app.activeDocument) {
 
         yColorBox = coordY - 1.5 * mm;
         xColorBox = coordX + 117.605 * mm
-        
+
         yColorSmallText = coordY - 26.858 * mm;
         xColorSmallText = coordX + 191.96 * mm
-        
-        
-        
+
+
+
 //Размещение  текста с цветом для процента запечатки
-for (i=0; i < inkList.length; i++) {
-            if (inkList[i].inkInfo.printingStatus == InkPrintStatus.ENABLEINK) {
-                switch (inkList[i].name) {
+for (i=0; i < inksArray.length; i++) {
+                switch (inksArray[i].name) {
                     case "Process Cyan":
 
 
@@ -604,7 +622,7 @@ for (i=0; i < inkList.length; i++) {
                         colorSmallText.position = [xColorSmallText,  yColorSmallText]
                         yColorSmallText = yColorSmallText - 2.41 * mm
                         break;
-                        
+
                      case "Process Magenta":
                         colorSmallText1 = textFrames.add()
                         colorSmallText1.contents = "M-"
@@ -639,24 +657,22 @@ for (i=0; i < inkList.length; i++) {
                         break;
 
                     default:
-                        
+
                         colorSmallText4 = textFrames.add()
                         colorSmallText4.contents = inkList[i].name.replace(/PANTONE\s(.+)/g, "P-$1") + "-"
                         colorSmallTextStyle4 = colorSmallText4.textRange.characterAttributes
                         colorSmallTextStyle4.size = 7
-                        colorSmallTextStyle4.fillColor = makeColor(0, 0, 0, 100)
+                        colorSmallTextStyle4.fillColor = inksSwatches[i].color
                         colorSmallText4 = colorSmallText4.createOutline()
                         colorSmallText4.position = [xColorSmallText, yColorSmallText]
                         yColorSmallText = yColorSmallText - 2.41 * mm
-                        break; 
+                        break;
                 }
             }
-        }
 
 //Размещение квадратиков с цветами
-        for (i=0; i < inkList.length; i++) {
-            if (inkList[i].inkInfo.printingStatus == InkPrintStatus.ENABLEINK) {
-                switch (inkList[i].name) {
+       for (i=0; i < inksArray.length; i++) {
+                switch (inksArray[i].name) {
                     case "Process Cyan":
                         colorBox1 = pathItems.rectangle(yColorBox, xColorBox, 10 * mm, 5 * mm)
                         colorBox1.stroked = false
@@ -718,22 +734,25 @@ for (i=0; i < inkList.length; i++) {
                         break;
 
                     default:
+                        //$.writeln("start " + inksArray[i].name)
                         colorBox5 = pathItems.rectangle(yColorBox, xColorBox, 10 * mm, 5 * mm)
                         colorBox5.stroked = false
-                        colorBox5.fillColor = makeColor(0, 0, 0, 100)
-
+                        //colorBox5.fillColor = makeColor(0, 0, 0, 100)
+                        colorBox5.fillColor = inksSwatches[i].color
+                        //$.writeln("middle1 " + inksArray[i].name)
                         colorText5 = textFrames.add()
-                        colorText5.contents = inkList[i].name.replace(/PANTONE\s(.+)/g, "P-$1")
+                        colorText5.contents = inksArray[i].name.replace(/PANTONE\s(.+)/g, "P-$1")
                         colorText5Style = colorText5.textRange.characterAttributes
                         colorText5Style.size = 14
-                        colorText5Style.fillColor = makeColor(0, 0, 0, 100)
+                        //colorText5Style.fillColor = makeColor(0, 0, 0, 100)
+                        colorText5Style.fillColor = inksSwatches[i].color
                         colorText5 = colorText5.createOutline()
                         colorText5.position = [xColorBox + 11 * mm, yColorBox - 0.807 * mm]
                         yColorBox = yColorBox - 6 * mm
                         break;
+                        
                 }
             }
-        }
 
 
         myDialog.close()
@@ -741,5 +760,3 @@ for (i=0; i < inkList.length; i++) {
 
     myDialog.show()
 }
-
-
