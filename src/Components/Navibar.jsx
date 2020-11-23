@@ -38,8 +38,8 @@ const handleShow = () => setShow(true)
                             <Nav.Link><Link to="/about">About</Link></Nav.Link>
                         </Nav>
                         <Nav>
-                            <Button className="mr-2" variant={"primary"} onClick={handleShow}>Log In</Button>
-                            <Button variant={"primary"} onClick={handleShow}>Sign Out</Button>
+                            <Button style={{ width: '71px' }} className="mr-2 mt-2" variant={"primary"} onClick={handleShow}>Log In</Button>
+                            <Button style={{ width: '88px' }} className="mt-2" variant={"primary"} onClick={handleShow}>Sign Out</Button>
                         </Nav>
                     </Navbar.Collapse>
                     </Container>

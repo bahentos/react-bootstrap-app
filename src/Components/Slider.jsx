@@ -9,12 +9,10 @@ import styled from 'styled-components'
 const NewDesign = styled.div`
 .carousel-caption {
   color: white;
-  font-size: 2rem;
 }
 
 .carousel-caption h3 {
   color: white;
-  font-size: 3rem;
 }
 
 .carousel-item {
